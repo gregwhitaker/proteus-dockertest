@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.netifi.proteus.dockertest.service;
+
+option java_package = "com.netifi.proteus.dockertest.service";
+option java_outer_classname = "DockerTestServiceProto";
+option java_multiple_files = true;
+
+service DockerTestService {
+  rpc RunTest (DockerTestRequest) returns (stream DockerTestResponse) {}
+}
+
+message DockerTestRequest {
+
+}
+
+message DockerTestResponse {
+  int32 number = 1;
+}

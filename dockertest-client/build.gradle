@@ -1,14 +1,28 @@
-group 'com.netifi.proteus'
-version '1.0-SNAPSHOT'
+plugins {
+    id 'application'
+    id 'org.springframework.boot' version '2.0.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
+}
 
-apply plugin: 'java'
+mainClassName = 'com.netifi.proteus.dockertest.client.Main'
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
+dependencyManagement {
+    imports {
+        mavenBom "io.spring.platform:platform-bom:${springbomVersion}"
+    }
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile project(':dockertest-idl')
+    compile "com.netifi.proteus:proteus-spring-boot-starter:${proteusSpringVersion}"
+
+    testCompile 'junit:junit:4.12'
+}
+
+configurations.all {
+    resolutionStrategy {
+        dependencySubstitution {
+            substitute module('com.google.guava:guava') with module('com.google.guava:guava:22.0')
+        }
+    }
 }

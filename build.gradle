@@ -1,3 +1,37 @@
 plugins {
+    id 'com.gradle.build-scan' version '1.14'
+    id 'com.github.hierynomus.license' version '0.14.0'
+    id 'net.saliman.properties' version '1.4.6'
+}
 
+buildScan {
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    termsOfServiceAgree = 'yes'
+    publishAlways()
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'com.github.hierynomus.license'
+    apply plugin: 'idea'
+    apply plugin: 'net.saliman.properties'
+
+    ext {
+        protobufVersion = '3.6.0'
+        proteusVersion = '0.7.19'
+        proteusSpringVersion = '0.3.2'
+        springbomVersion = 'Cairo-SR1'
+    }
+
+    repositories {
+        mavenLocal()
+        jcenter()
+        mavenCentral()
+    }
+
+    // Applies license headers to source files
+    license {
+        header rootProject.file('codequality/HEADER')
+        strictCheck true
+    }
 }

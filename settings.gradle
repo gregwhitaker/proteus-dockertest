@@ -1,4 +1,5 @@
 rootProject.name = 'proteus-dockertest'
 include 'dockertest-client'
 include 'dockertest-service'
+include 'dockertest-idl'
 
