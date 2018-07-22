@@ -5,8 +5,14 @@ A set of services, clients, and Docker Compose files that can be used for settin
 environments for the purposes of testing the Proteus Broker and other Proteus components.
 
 ## Setting Up Single Broker
+Running the following command will start a single broker with a client and service attached:
+
+    $ docker-compose up
 
 ## Setting Up Broker Cluster
+Running the following command will start a cluster of three brokers with a client and service attached:
+
+    $ docker-compose -f docker-compose-cluster.yml up
 
 ## Publishing Containers to Docker Hub
 Follow the steps below to publish new dockertest containers to Docker Hub:
