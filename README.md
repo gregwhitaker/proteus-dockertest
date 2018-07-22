@@ -1,14 +1,16 @@
 # proteus-dockertest
+A set of services, clients, and Docker Compose files that can be used for setting up arbitrary [Netifi Proteus](https://www.netifi.com) 
+environments for the purposes of testing the Proteus Broker and other Proteus components.
 
-## Publishing Containers to DockerHub
-Follow the steps below to publish new dockertest containers to DockerHub:
+## Publishing Containers to Docker Hub
+Follow the steps below to publish new dockertest containers to Docker Hub:
 
 1. Add a `gradle-local.properties` file to the root project.
 
     The gradle-local.properties file is a user-specific Gradle configuration file
     that will contain your DockerHub credentials.
     
-2. Add your DockerHub credentials to the `gradle-local.properties` file as follows:
+2. Add your Docker Hub credentials to the `gradle-local.properties` file as follows:
 
         dockerUsername={username}
         dockerPassword={password}
