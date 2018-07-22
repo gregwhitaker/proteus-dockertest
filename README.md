@@ -19,6 +19,9 @@ Follow the steps below to publish new dockertest containers to Docker Hub:
 
         $ ./gradlew clean build pushImage
 
+## Bugs and Feedback
+For bugs, questions, and discussions please use the [Github Issues](https://github.com/gregwhitaker/proteus-dockertest/issues).
+
 ## License
 Copyright 2018 Greg Whitaker
 
