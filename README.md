@@ -10,6 +10,11 @@ This project requires that you have following installed:
 * [Docker](https://www.docker.com/community-edition)
 * [Docker Compose](https://docs.docker.com/compose/)
 
+## Building the Test Environments
+Build the environment by running the following Gradle command:
+
+    $ ./gradlew clean webpack build
+
 ## Running the Test Environments
 The following commands will bootstrap a test environment for you using Docker Compose.
 
