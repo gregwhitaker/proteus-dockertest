@@ -9,6 +9,8 @@ before_install:
 - sudo apt-get install libprotobuf-dev libprotoc-dev protobuf-compiler -y
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+script:
+- "./gradlew clean build"
 cache:
   directories:
   - "$HOME/.gradle/caches/"
