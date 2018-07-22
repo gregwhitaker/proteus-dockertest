@@ -41,11 +41,12 @@ function main() {
             url,
         },
     });
-    
+
     const brokerInfoService = new BrokerInfoServiceClient(
         proteus.group('com.netifi.proteus.brokerServices'),
     );
 
+    // Get Stream of All Brokers
     brokerInfoService.brokers(new Empty(), Buffer.alloc(0)).subscribe({
         onComplete: () => console.log('complete'),
         onError: error => console.error(error),
@@ -53,6 +54,20 @@ function main() {
             var pretty = JSON.stringify(broker.toObject());
             console.log(pretty);
             addBrokerToList(broker);
+
+            // Get Stream of All Destinations on Broker
+            brokerInfoService.destinations(broker, Buffer.alloc(0)).subscribe({
+                onComplete: () => console.log('complete'),
+                onError: error => console.error(error),
+                onNext: destination => {
+                    var pretty = JSON.stringify(destination.toObject());
+                    console.log(pretty);
+                    addDestinationToList(broker, destination);
+                },
+                onSubscribe: subscription => {
+                    subscription.request(100);
+                },
+            });
         },
         onSubscribe: subscription => {
             subscription.request(100);
@@ -61,7 +76,37 @@ function main() {
 }
 
 function addBrokerToList(broker) {
+    var t = document.getElementById("brokerList");
+    var row = t.insertRow();
 
+    var idCell = row.insertCell();
+    idCell.innerText = broker.getBrokerid();
+
+    var ipAddressCell = row.insertCell();
+    ipAddressCell.innerText = broker.getIpaddress();
+
+    var portCell = row.insertCell();
+    portCell.innerText = broker.getPort();
+
+    var clusterPortCell = row.insertCell();
+    clusterPortCell.innerText = broker.getClusterport();
+
+    var adminPortCell = row.insertCell();
+    adminPortCell.innerText = broker.getAdminport();
+}
+
+function addDestinationToList(broker, destination) {
+    var t = document.getElementById("destinationList");
+    var row = t.insertRow();
+
+    var idCell = row.insertCell();
+    idCell.innerText = broker.getBrokerid();
+
+    var groupCell = row.insertCell();
+    groupCell.innerText = destination.getGroup();
+
+    var destinationCell = row.insertCell();
+    destinationCell.innerText = destination.getDestination();
 }
 
 document.addEventListener('DOMContentLoaded', main);
