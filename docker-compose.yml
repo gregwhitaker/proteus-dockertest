@@ -12,9 +12,13 @@ services:
     - "8101:8101"
   service:
     image: gregnetifi/proteus-dockertest-service
+    environment:
+    - "NETIFI_PROTEUS_BROKERHOSTNAME=host.docker.internal"
     depends_on:
     - broker
   client:
     image: gregnetifi/proteus-dockertest-client
+    environment:
+    - "NETIFI_PROTEUS_BROKERHOSTNAME=host.docker.internal"
     depends_on:
     - broker
