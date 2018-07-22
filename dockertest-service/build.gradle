@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-docker-plugin:3.4.4'
+    }
+}
+
 plugins {
     id 'java'
     id 'application'
@@ -26,4 +36,27 @@ configurations.all {
             substitute module('com.google.guava:guava') with module('com.google.guava:guava:22.0')
         }
     }
+}
+
+apply plugin: com.bmuschko.gradle.docker.DockerRemoteApiPlugin
+
+import com.bmuschko.gradle.docker.tasks.image.*
+
+docker {
+    registryCredentials {
+        url = 'https://hub.docker.com/r/gregnetifi/proteus-dockertest-service'
+        username = "$dockerUsername"
+        password = "$dockerPassword"
+    }
+}
+
+task buildImage(type: DockerBuildImage) {
+    buildArgs = ['JAR_FILE': "${bootJar.archiveName}"]
+    dockerFile = file("${projectDir}/Dockerfile")
+    inputDir = file("${projectDir}")
+    tags = ["gregnetifi/proteus-${projectDir.name}"]
+}
+
+task pushImage(type: DockerPushImage, dependsOn: buildImage) {
+    imageName = "gregnetifi/proteus-${projectDir.name}"
 }
