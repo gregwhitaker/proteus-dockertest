@@ -4,6 +4,9 @@
 A set of services, clients, and Docker Compose files that can be used for setting up arbitrary [Netifi Proteus](https://www.netifi.com) 
 environments for the purposes of testing the Proteus Broker and other Proteus components.
 
+## Prerequisites
+This project requires that you have [Docker Compose](https://docs.docker.com/compose/) installed.
+
 ## Setting Up Single Broker
 Running the following command will start a single broker with a client and service attached:
 
