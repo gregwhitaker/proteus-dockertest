@@ -11,12 +11,12 @@ This project requires that you have [Docker Compose](https://docs.docker.com/com
 ### Single Broker
 Running the following command will start a single broker with a client and service attached:
 
-    $ docker-compose up
+    $ docker-compose pull && docker-compose up
 
 ### Broker Cluster
 Running the following command will start a cluster of three brokers with a client and service attached:
 
-    $ docker-compose -f docker-compose-cluster.yml up
+    $ docker-compose pull && docker-compose -f docker-compose-cluster.yml up
 
 ## Development
 ### Publishing Containers to Docker Hub

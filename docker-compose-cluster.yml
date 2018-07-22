@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  broker1:
+    image: netifi/proteus
+    environment:
+    - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=3006839580103245170 -Dnetifi.authentication.0.accessToken=SkOlZxqQcTboZE3fni4OVXVC0e0="
+    ports:
+    - "6001:6001"
+    - "7001:7001"
+    - "8001:8001"
+    - "8101:8101"
+  broker2:
+    image: netifi/proteus
+    environment:
+    - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=3006839580103245170 -Dnetifi.authentication.0.accessToken=SkOlZxqQcTboZE3fni4OVXVC0e0="
+    ports:
+    - "6002:6002"
+    - "7002:7002"
+    - "8002:8002"
+    - "8102:8102"
+  broker3:
+    image: netifi/proteus
+    environment:
+    - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=3006839580103245170 -Dnetifi.authentication.0.accessToken=SkOlZxqQcTboZE3fni4OVXVC0e0="
+    ports:
+    - "6003:6003"
+    - "7003:7003"
+    - "8003:8003"
+    - "8103:8103"
+  service:
+    image: gregnetifi/proteus-dockertest-service
+    environment:
+    - ""
+    - ""
+    depends_on:
+    - broker1
+    - broker2
+    - broker3
+  client:
+    image: gregnetifi/proteus-dockertest-client
+    environment:
+    - ""
+    - ""
+    depends_on:
+    - broker1
+    - broker2
+    - broker3

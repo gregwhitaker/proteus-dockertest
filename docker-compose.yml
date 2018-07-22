@@ -6,8 +6,10 @@ services:
     environment:
     - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=3006839580103245170 -Dnetifi.authentication.0.accessToken=SkOlZxqQcTboZE3fni4OVXVC0e0="
     ports:
+    - "6001:6001"
     - "7001:7001"
     - "8001:8001"
+    - "8101:8101"
   service:
     image: gregnetifi/proteus-dockertest-service
     depends_on:
