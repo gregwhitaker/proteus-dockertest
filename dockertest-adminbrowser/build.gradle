@@ -7,3 +7,7 @@ task webpack(type: Exec) {
 
     commandLine "$projectDir/node_modules/.bin/webpack", "--display-error-details"
 }
+
+task clean(type: Delete) {
+    delete 'build'
+}
