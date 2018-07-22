@@ -17,7 +17,8 @@ Running the following command will start a cluster of three brokers with a clien
 
     $ docker-compose -f docker-compose-cluster.yml up
 
-## Publishing Containers to Docker Hub
+## Development
+### Publishing Containers to Docker Hub
 Follow the steps below to publish new dockertest containers to Docker Hub:
 
 1. Add a `gradle-local.properties` file to the root project.
