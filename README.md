@@ -14,7 +14,7 @@ This project requires that you have following installed:
 The following commands will bootstrap a test environment for you using Docker Compose.
 
 Note: If you are not using a Mac, you will need to remove or modify the `NETIFI_PROTEUS_BROKERHOSTNAME` environment variable being
-supplied to both the server and client containers.
+supplied to both the server and client containers to match your docker host.
 
 ### Single Broker
 Running the following command will start a single broker with a client and service attached:
