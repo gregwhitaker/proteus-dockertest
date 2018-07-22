@@ -1,5 +1,22 @@
 # proteus-dockertest
 
+## Publishing Containers to DockerHub
+Follow the steps below to publish new dockertest containers to DockerHub:
+
+1. Add a `gradle-local.properties` file to the root project.
+
+    The gradle-local.properties file is a user-specific Gradle configuration file
+    that will contain your DockerHub credentials.
+    
+2. Add your DockerHub credentials to the `gradle-local.properties` file as follows:
+
+        dockerUsername={username}
+        dockerPassword={password}
+        
+3. Run the following Gradle command:
+
+        $ ./gradlew clean build pushImage
+
 ## License
 Copyright 2018 Greg Whitaker
 
