@@ -36,4 +36,25 @@ services:
     - "8103:8103"
     depends_on:
     - broker2
-
+  service:
+    image: gregnetifi/proteus-dockertest-service
+    environment:
+    - "NETIFI_PROTEUS_BROKERHOSTNAME=host.docker.internal"
+    - "NETIFI_PROTEUS_BROKERPORT=8001"
+    - "NETFII_PROTEUS_ACCESSKEY=3006839580103245170"
+    - "NETIFI_PROTEUS_ACCESSTOKEN=SkOlZxqQcTboZE3fni4OVXVC0e0="
+    depends_on:
+    - broker1
+    - broker2
+    - broker3
+  client:
+    image: gregnetifi/proteus-dockertest-client
+    environment:
+    - "NETIFI_PROTEUS_BROKERHOSTNAME=host.docker.internal"
+    - "NETIFI_PROTEUS_BROKERPORT=8003"
+    - "NETFII_PROTEUS_ACCESSKEY=3006839580103245170"
+    - "NETIFI_PROTEUS_ACCESSTOKEN=SkOlZxqQcTboZE3fni4OVXVC0e0="
+    depends_on:
+    - broker1
+    - broker2
+    - broker3
