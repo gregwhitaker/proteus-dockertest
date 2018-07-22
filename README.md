@@ -7,12 +7,13 @@ environments for the purposes of testing the Proteus Broker and other Proteus co
 ## Prerequisites
 This project requires that you have [Docker Compose](https://docs.docker.com/compose/) installed.
 
-## Setting Up Single Broker
+## Running the Test Environments
+### Single Broker
 Running the following command will start a single broker with a client and service attached:
 
     $ docker-compose up
 
-## Setting Up Broker Cluster
+### Broker Cluster
 Running the following command will start a cluster of three brokers with a client and service attached:
 
     $ docker-compose -f docker-compose-cluster.yml up
