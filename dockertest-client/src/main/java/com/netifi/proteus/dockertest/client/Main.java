@@ -45,8 +45,6 @@ public class Main {
         public void run(String... args) throws Exception {
             client.runTest(DockerTestRequest.newBuilder().build())
                     .subscribe(response -> System.out.println(response.getNumber()));
-
-            Thread.currentThread().join();
         }
     }
 }

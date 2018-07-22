@@ -19,6 +19,7 @@ import io.netty.buffer.ByteBuf;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 
+import java.time.Duration;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -28,11 +29,11 @@ public class DefaultDockerTestService implements DockerTestService {
 
     @Override
     public Flux<DockerTestResponse> runTest(DockerTestRequest message, ByteBuf metadata) {
-        return Flux.range(0, Integer.MAX_VALUE)
+        return Flux.interval(Duration.ofSeconds(1))
                 .map(i -> {
-                   return DockerTestResponse.newBuilder()
-                           .setNumber(RANDOM.nextInt())
-                           .build();
+                    return DockerTestResponse.newBuilder()
+                            .setNumber(Math.abs(RANDOM.nextInt()))
+                            .build();
                 });
     }
 }
