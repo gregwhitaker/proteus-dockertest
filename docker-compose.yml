@@ -4,7 +4,7 @@ services:
   broker:
     image: netifi/proteus
     environment:
-    - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=3006839580103245170 -Dnetifi.authentication.0.accessToken=SkOlZxqQcTboZE3fni4OVXVC0e0="
+    - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=9007199254740991 -Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY="
     ports:
     - "6001:6001"
     - "7001:7001"

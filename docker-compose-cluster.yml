@@ -4,7 +4,7 @@ services:
   broker1:
     image: netifi/proteus
     environment:
-    - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=3006839580103245170 -Dnetifi.authentication.0.accessToken=SkOlZxqQcTboZE3fni4OVXVC0e0= -Dnetifi.broker.admin.address=broker1 -Dnetifi.broker.admin.publicAddress=broker1 -Dnetifi.broker.admin.port=6001 -Dnetifi.broker.cluster.address=broker1 -Dnetifi.broker.cluster.publicAddress=broker1 -Dnetifi.broker.cluster.port=7001 -Dnetifi.broker.tcp.address=broker1 -Dnetifi.broker.tcp.publicAddress=broker1 -Dnetifi.broker.tcp.port=8001 -Dnetifi.broker.websocket.address=broker1 -Dnetifi.broker.websocket.publicAddress=broker1 -Dnetifi.broker.websocket.port=8101 -Dnetifi.broker.members.address=broker1:7001"
+    - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=9007199254740991 -Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY= -Dnetifi.broker.admin.address=broker1 -Dnetifi.broker.admin.publicAddress=broker1 -Dnetifi.broker.admin.port=6001 -Dnetifi.broker.cluster.address=broker1 -Dnetifi.broker.cluster.publicAddress=broker1 -Dnetifi.broker.cluster.port=7001 -Dnetifi.broker.tcp.address=broker1 -Dnetifi.broker.tcp.publicAddress=broker1 -Dnetifi.broker.tcp.port=8001 -Dnetifi.broker.websocket.address=broker1 -Dnetifi.broker.websocket.publicAddress=broker1 -Dnetifi.broker.websocket.port=8101 -Dnetifi.broker.members.address=broker1:7001"
     ports:
     - "6001:6001"
     - "7001:7001"
@@ -13,7 +13,7 @@ services:
   broker2:
     image: netifi/proteus
     environment:
-    - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=3006839580103245170 -Dnetifi.authentication.0.accessToken=SkOlZxqQcTboZE3fni4OVXVC0e0= -Dnetifi.broker.admin.address=broker2 -Dnetifi.broker.admin.publicAddress=broker2 -Dnetifi.broker.admin.port=6002 -Dnetifi.broker.cluster.address=broker2 -Dnetifi.broker.cluster.publicAddress=broker2 -Dnetifi.broker.cluster.port=7002 -Dnetifi.broker.tcp.address=broker2 -Dnetifi.broker.tcp.publicAddress=broker2 -Dnetifi.broker.tcp.port=8002 -Dnetifi.broker.websocket.address=broker2 -Dnetifi.broker.websocket.publicAddress=broker2 -Dnetifi.broker.websocket.port=8102 -Dnetifi.broker.members.address=broker1:7001"
+    - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=9007199254740991 -Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY= -Dnetifi.broker.admin.address=broker2 -Dnetifi.broker.admin.publicAddress=broker2 -Dnetifi.broker.admin.port=6002 -Dnetifi.broker.cluster.address=broker2 -Dnetifi.broker.cluster.publicAddress=broker2 -Dnetifi.broker.cluster.port=7002 -Dnetifi.broker.tcp.address=broker2 -Dnetifi.broker.tcp.publicAddress=broker2 -Dnetifi.broker.tcp.port=8002 -Dnetifi.broker.websocket.address=broker2 -Dnetifi.broker.websocket.publicAddress=broker2 -Dnetifi.broker.websocket.port=8102 -Dnetifi.broker.members.address=broker1:7001"
     ports:
     - "6002:6002"
     - "7002:7002"
@@ -24,7 +24,7 @@ services:
   broker3:
     image: netifi/proteus
     environment:
-    - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=3006839580103245170 -Dnetifi.authentication.0.accessToken=SkOlZxqQcTboZE3fni4OVXVC0e0= -Dnetifi.broker.admin.address=broker3 -Dnetifi.broker.admin.publicAddress=broker3 -Dnetifi.broker.admin.port=6003 -Dnetifi.broker.cluster.address=broker3 -Dnetifi.broker.cluster.publicAddress=broker3 -Dnetifi.broker.cluster.port=7003 -Dnetifi.broker.tcp.address=broker3 -Dnetifi.broker.tcp.publicAddress=broker3 -Dnetifi.broker.tcp.port=8003 -Dnetifi.broker.websocket.address=broker3 -Dnetifi.broker.websocket.publicAddress=broker3 -Dnetifi.broker.websocket.port=8103 -Dnetifi.broker.members.address=broker1:7001"
+    - "BROKER_SERVER_OPTS=-Dnetifi.authentication.0.accessKey=9007199254740991 -Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY= -Dnetifi.broker.admin.address=broker3 -Dnetifi.broker.admin.publicAddress=broker3 -Dnetifi.broker.admin.port=6003 -Dnetifi.broker.cluster.address=broker3 -Dnetifi.broker.cluster.publicAddress=broker3 -Dnetifi.broker.cluster.port=7003 -Dnetifi.broker.tcp.address=broker3 -Dnetifi.broker.tcp.publicAddress=broker3 -Dnetifi.broker.tcp.port=8003 -Dnetifi.broker.websocket.address=broker3 -Dnetifi.broker.websocket.publicAddress=broker3 -Dnetifi.broker.websocket.port=8103 -Dnetifi.broker.members.address=broker1:7001"
     ports:
     - "6003:6003"
     - "7003:7003"
