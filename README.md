@@ -2,6 +2,10 @@
 A set of services, clients, and Docker Compose files that can be used for setting up arbitrary [Netifi Proteus](https://www.netifi.com) 
 environments for the purposes of testing the Proteus Broker and other Proteus components.
 
+## Setting Up Single Broker
+
+## Setting Up Broker Cluster
+
 ## Publishing Containers to Docker Hub
 Follow the steps below to publish new dockertest containers to Docker Hub:
 
