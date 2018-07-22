@@ -132,6 +132,9 @@ Temporary Items
 /build/
 **/build/
 
+# Local properties
+gradle-local.properties
+
 # Ignore Gradle GUI config
 gradle-app.setting
 
