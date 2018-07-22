@@ -5,9 +5,17 @@ A set of services, clients, and Docker Compose files that can be used for settin
 environments for the purposes of testing the Proteus Broker and other Proteus components.
 
 ## Prerequisites
-This project requires that you have [Docker Compose](https://docs.docker.com/compose/) installed.
+This project requires that you have following installed: 
+
+* [Docker](https://www.docker.com/community-edition)
+* [Docker Compose](https://docs.docker.com/compose/)
 
 ## Running the Test Environments
+The following commands will bootstrap a test environment for you using Docker Compose.
+
+Note: If you are not using a Mac, you will need to remove or modify the `NETIFI_PROTEUS_BROKERHOSTNAME` environment variable being
+supplied to both the server and client containers.
+
 ### Single Broker
 Running the following command will start a single broker with a client and service attached:
 
